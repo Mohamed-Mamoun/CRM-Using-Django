@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<br>
+<div class="col-md-7">
+    <h5>LAST ORDERS:</h5>
+    <hr>
+    <div class="card card-body">
+        
+        <br>
+        <table class="table table-sm">
+            <tr>
+                <th>Product</th>
+                <th>Date Ordered</th>
+                <th>Status</th>
+                
+            </tr>
+
+            {% for o in orders %}
+            <tr>
+               <td>{{o.product}}</td> 
+               <td>{{o.Date_created}}</td>
+               <td>{{o.status}}</td>
+             
+            </tr>
+            {% endfor %}
+    
+        </table>
+    </div>
+</div>
+<hr>
+{% include 'status.html' %}
+
+
+
+
+{% endblock %}
